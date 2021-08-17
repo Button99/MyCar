@@ -35,13 +35,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="btn" >{{ __('All Cars')}} </a>
+                            <a class="btn" href="{{ url('/allCars') }}">{{ __('All Cars')}} </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="btn"> {{ __('Recently Added')}} </a>
+                            <a class="btn" href="{{ url('/recentlyAdded') }}"> {{ __('Recently Added')}} </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="btn"> {{ __('Most Viewed')}} </a>
+                            <a class="btn" href="{{ url('/mostViewed') }}"> {{ __('Most Viewed')}} </a>
                         </li>
                     </ul>
 
@@ -88,5 +88,8 @@
             @yield('content')
         </main>
     </div>
+    <footer>
+        <p>&copy; MyCar</p>
+    </footer>
 </body>
 </html>

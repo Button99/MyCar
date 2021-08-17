@@ -1,0 +1,41 @@
+body {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.layout {
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 35%;
+}
+
+.layout ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.layout li {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 1px;
+}

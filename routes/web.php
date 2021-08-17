@@ -17,6 +17,19 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/allCars', function () {
+    return view('allCars');
+});
+
+
+Route::get('/recentlyAdded', function () {
+    return view('recentlyAdded');
+});
+
+Route::get('/mostViewed', function () {
+    return view('mostViewed');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
