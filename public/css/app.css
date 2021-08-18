@@ -28,7 +28,11 @@ footer {
 }
 
 .card {
-  width: 35%;
+  width: 45%;
+}
+
+.container .card {
+  width: 80%;
 }
 
 .layout ul {

@@ -30,6 +30,10 @@ Route::get('/mostViewed', function () {
     return view('mostViewed');
 });
 
+Route::get('/addNewCar', function () {
+    return view('addNewCar');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

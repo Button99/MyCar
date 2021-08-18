@@ -29,7 +29,7 @@
                             <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="lastName" type="text" class="form-control @error('name') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" required autocomplete="name" autofocus>
+                                <input id="lastName" type="text" class="form-control @error('lastName') is-invalid @enderror" name="lastName" value="{{ old('lastName') }}" autofocus>
 
                                 @error('lastName')
                                     <span class="invalid-feedback" role="alert">
@@ -77,7 +77,13 @@
 
                         <div class="form-group row">
                             <label for="terms" class="col-md-4 col-form-label text-md-right">Do you agree to Terms & Conditions</label>
-                            <input type="checkbox" name="terms">
+                            <input type="checkbox" name="terms" class="form-control @error('terms') error @enderror">
+                            @error('terms')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                        
                         </div>
 
                         <div class="form-group row mb-0">
