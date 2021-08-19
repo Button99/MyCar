@@ -34,6 +34,14 @@ Route::get('/addNewCar', function () {
     return view('addNewCar');
 });
 
+Route::get('/faq', function() {
+    return view('faq');
+});
+
+Route::get('/options', function() {
+    return view('options');
+});
+
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
 
 Auth::routes();
