@@ -26,7 +26,7 @@ class FormServiceProvider extends ServiceProvider
     {
         Form::component('text', 'components.form.text', ['name', 'value' => null, 'attributes' => []]); // model, mileage, condition, category, fuel_type, type, engine
         Form::component('number', 'components.form.number', ['name', 'value' => null, 'attributes' => []]); // Doors, seats
-        Form::component('year', 'components.form.year', ['name', 'value' => null, 'attributes' => []]);
-        // TODO:: CREATE RESOURCES->COMP->FORM
+        Form::component('year', 'components.form.year', ['name', 'value' => null, 'attributes' => []]); // For Kteo, Year
+        Form::component('submit', 'components.form.submit', ['name', 'value'=> null,'attributes' => []]);
     }
 }

@@ -34,6 +34,8 @@ Route::get('/addNewCar', function () {
     return view('addNewCar');
 });
 
+Route::resource('cars', 'App\Http\Controllers\VehicleController');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

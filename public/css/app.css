@@ -46,6 +46,24 @@ footer {
   border-radius: 1px;
 }
 
+.layout-addNewCar {
+  padding-left: 4rem;
+  margin-left: 4rem;
+}
+
+.layout-addNewCar .card {
+  align-content: center;
+  width: 80%;
+  margin-left: 4rem;
+}
+
+.layout-addNewCar .card-body {
+  align-content: center;
+  width: 100%;
+  margin-left: 4rem;
+  padding-left: 4rem;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
