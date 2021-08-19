@@ -5,7 +5,13 @@
     <div class="col-lg-9">
         <div class="card">
                 <div class="card-header"> {{ __('Add new car')}} </div>
-                <div class="card-body"> 
+                <div class="card-body">
+
+                    @if($errors->any())
+                        @foreach($errors->all as $error)
+                            {{$error}}
+                        @endforeach
+                    @endif
                     {!! Form::open(['action' => 'App\Http\Controllers\VehicleController@store', 'method' => 'POST']) !!}
                         {{Form::label('model:')}}
                         {{Form::text('model', '', ['placeholder' => 'Model'])}}
