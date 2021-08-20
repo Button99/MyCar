@@ -48,6 +48,8 @@ Route::get('/myProfile', function() {
 
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
 
+// Need to add route resource and show the id of the user
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
