@@ -67,7 +67,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
+                                    <a class="dropdown-item" href="{{ url('/myProfile') }}"> {{ __('My Profile')}} </a>
                                     <a class="dropdown-item" href="{{ url('/addNewCar') }}"> {{ __('Add new Car') }} </a>
                                     <a class="dropdown-item" href="{{ url('/options') }}"> {{ __('Options') }}  </a>
                                     <a class="dropdown-item" href="{{ url('/faq') }}"> {{ __('FAQ') }}  </a>

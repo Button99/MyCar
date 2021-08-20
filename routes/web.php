@@ -42,6 +42,10 @@ Route::get('/options', function() {
     return view('options');
 });
 
+Route::get('/myProfile', function() {
+    return view('myProfile');
+});
+
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
 
 Auth::routes();
