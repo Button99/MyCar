@@ -17,14 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/allCars', function () {
-    return view('allCars');
-});
+Route::get('/allCars', 'App\Http\Controllers\VehicleController@show');
 
-
-Route::get('/recentlyAdded', function () {
-    return view('recentlyAdded');
-});
+Route::get('/carProfile', 'App\Http\Controllers\VehicleController@index');
 
 Route::get('/mostViewed', function () {
     return view('mostViewed');
@@ -42,9 +37,7 @@ Route::get('/options', function() {
     return view('options');
 });
 
-Route::get('/myProfile', function() {
-    return view('myProfile');
-});
+Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
 

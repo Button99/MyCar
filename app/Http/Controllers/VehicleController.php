@@ -45,4 +45,11 @@ class VehicleController extends Controller
             return redirect('/');
         }
     }
+
+    // Show all the Vehicles
+    public function show() {
+        $vehicles= Vehicle::orderBy('created_at', 'desc')->get();
+        
+        return view('allCars')->with('vehicles', $vehicles);
+    }
 }

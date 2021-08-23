@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(count($vehicles) > 0)
     <div class="layout">
         <ul>
+            @foreach($vehicles as $vehicle)
             <li>
                 <div class="card">
                     <img
@@ -11,32 +13,16 @@
                         alt="..."
                     />
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">Model: {{$vehicle-> model}}</h5>
                         <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
+                            Condition: {{$vehicle->condition}}
                         </p>
-                        <a href="#!" class="btn btn-primary">Button</a>
+                        <a href="/carProfile/{{$vehicle->id}}" class="btn btn-primary">View more</a>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="card">
-                    <img
-                        src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                        class="card-img-top"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            Some quick example text to build on the card title and make up the bulk of the
-                            card's content.
-                        </p>
-                        <a href="#!" class="btn btn-primary">Button</a>
-                    </div>
-                </div>
-            </li>
+            @endforeach
         </ul>
     </div>
+    @endif
 @endsection

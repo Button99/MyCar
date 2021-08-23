@@ -67,11 +67,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('/myProfile') }}"> {{ __('My Profile')}} </a>
-                                    <a class="dropdown-item" href="{{ url('/addNewCar') }}"> {{ __('Add new Car') }} </a>
-                                    <a class="dropdown-item" href="{{ url('/options') }}"> {{ __('Options') }}  </a>
-                                    <a class="dropdown-item" href="{{ url('/faq') }}"> {{ __('FAQ') }}  </a>
-
+                                    @if(Auth::user()->name)
+                                        <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}"> {{ __('My Profile')}} </a>
+                                        <a class="dropdown-item" href="/addNewCar"> {{ __('Add new Car') }} </a>
+                                        <a class="dropdown-item" href="/options"> {{ __('Options') }}  </a>
+                                        <a class="dropdown-item" href="/faq"> {{ __('FAQ') }}  </a>
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -82,6 +82,8 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    @endif
                                 </div>
                             </li>
                         @endguest
