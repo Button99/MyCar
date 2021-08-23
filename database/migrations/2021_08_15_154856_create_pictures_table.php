@@ -20,6 +20,13 @@ class CreatePicturesTable extends Migration
             $table->string('alt')->nullable();
             $table->string('description')->nullable();
             $table->timestamps();
+
+            $table->bigInteger('user_id')->unsigned()->length(20);
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->bigInteger('vehicle_id')->unsigned()->length(20);
+            $table->foreign('vehicle_id')->references('id')->on('vehicles');
+
         });
     }
 

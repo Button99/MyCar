@@ -47,9 +47,15 @@ class VehicleController extends Controller
     }
 
     // Show all the Vehicles
-    public function show() {
+    public function show($id) {
+        $vehicle= Vehicle::find($id);
+
+        return view('/carProfile')->with('vehicle', $vehicle);
+    }
+
+    public function index() {
         $vehicles= Vehicle::orderBy('created_at', 'desc')->get();
-        
+
         return view('allCars')->with('vehicles', $vehicles);
     }
 }

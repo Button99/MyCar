@@ -34,6 +34,10 @@ class CreateVehiclesTable extends Migration
 
             $table->double('price');
             $table->timestamps();
+
+            $table->foreignId('user_id');
+
+            $table->foreignId('dataLog_id');
         });
     }
 

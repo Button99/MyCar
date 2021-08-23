@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/allCars', 'App\Http\Controllers\VehicleController@show');
+Route::get('/allCars', 'App\Http\Controllers\VehicleController@index');
 
-Route::get('/carProfile', 'App\Http\Controllers\VehicleController@index');
+Route::get('/carProfile/{id}', 'App\Http\Controllers\VehicleController@show');
 
 Route::get('/mostViewed', function () {
     return view('mostViewed');

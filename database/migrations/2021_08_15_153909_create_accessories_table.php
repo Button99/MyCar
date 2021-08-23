@@ -29,6 +29,8 @@ class CreateAccessoriesTable extends Migration
             $table->boolean('TV/Camera');
             $table->boolean('Start/Stop');
             $table->timestamps();
+
+            $table->foreignId('vehicle_id');
         });
     }
 
