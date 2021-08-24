@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicle;
+use App\Models\DataLog;
+use Illuminate\Support\Facades\Auth;
 
 class VehicleController extends Controller
 {
@@ -27,6 +29,12 @@ class VehicleController extends Controller
 
         if($validateData == TRUE) {
             $vehicle= new Vehicle;
+            $datalog= new DataLog;
+
+            $datalog->model= $request->input('model');
+            $datalog->count= 0;
+            $datalog->save();
+
             $vehicle->model= $request->input('model');
             $vehicle->mileage= $request->input('mileage');
             $vehicle->color= $request->input('color');
@@ -39,7 +47,9 @@ class VehicleController extends Controller
             $vehicle->doors= $request->input('doors');
             $vehicle->seats= $request->input('seats');
             $vehicle->price= $request->input('price');
-            
+            $vehicle->user_id= Auth::user()->id;
+            $vehicle->dataLog_id= $datalog->id;
+
             $vehicle->save();
 
             return redirect('/');

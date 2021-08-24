@@ -15,8 +15,8 @@ class CreateDataLogsTable extends Migration
     {
         Schema::create('data_logs', function (Blueprint $table) {
             $table->id();
-            $table->string('types');
-            $table->enum('searching', ['buy', 'rent']);
+            $table->string('model');
+            $table->integer('count');
             $table->timestamps();
         });
     }

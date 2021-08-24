@@ -15,7 +15,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Model: {{$vehicle-> model}}</h5>
                         <p class="card-text">
-                            Condition: {{$vehicle->condition}}
+                            Condition: {{$vehicle->condition}}<br>
+                            Price: <b>{{$vehicle->price}}</b>
                         </p>
                         <a href="/carProfile/{{$vehicle->id}}" class="btn btn-primary">View more</a>
                     </div>

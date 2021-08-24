@@ -9,6 +9,9 @@ class Vehicle extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['model', 'mileage', 'color', 'condition', 'fuel_type', 'type', 'kteo', 'year', 'engine', 'doors',
+    'seats', 'price', 'updated_at', 'created_at', 'user_id', 'dataLog_id'];
+
     public function user_vehicle() {
         return $this->belongsTo('App\Models\User');
     }
@@ -19,8 +22,6 @@ class Vehicle extends Model
     public function vehicle_picture() {
         return $this->hasMany('App\Models\Picture');
     }
-
-
 
     public function vehicle_accessories() {
         return $this->hasMany('App\Models\Accessory');
