@@ -38,9 +38,6 @@
                             <a class="btn" href="{{ url('/allCars') }}">{{ __('All Cars')}} </a>
                         </li>
                         <li class="nav-item active">
-                            <a class="btn" href="{{ url('/recentlyAdded') }}"> {{ __('Recently Added')}} </a>
-                        </li>
-                        <li class="nav-item active">
                             <a class="btn" href="{{ url('/mostViewed') }}"> {{ __('Most Viewed')}} </a>
                         </li>
                     </ul>
