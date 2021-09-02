@@ -60,6 +60,9 @@ class VehicleController extends Controller
     public function show($id) {
         $vehicle= Vehicle::find($id);
 
+        $data= DataLog::find($vehicle->dataLog_id);
+        $data->count+=1;
+        $data->save();
         return view('/carProfile')->with('vehicle', $vehicle);
     }
 
@@ -67,5 +70,11 @@ class VehicleController extends Controller
         $vehicles= Vehicle::orderBy('created_at', 'desc')->get();
 
         return view('allCars')->with('vehicles', $vehicles);
+    }
+
+    public function mostViewedIndex() {
+        $vehicles= Vehicle::join('data_logs', 'data_logs.id', '=', 'vehicles.dataLog_id')->orderBy('count', 'asc')->get();
+        
+        return view('mostViewed')->with('vehicles', $vehicles);
     }
 }

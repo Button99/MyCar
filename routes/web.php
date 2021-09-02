@@ -21,9 +21,7 @@ Route::get('/allCars', 'App\Http\Controllers\VehicleController@index');
 
 Route::get('/carProfile/{id}', 'App\Http\Controllers\VehicleController@show');
 
-Route::get('/mostViewed', function () {
-    return view('mostViewed');
-});
+Route::get('/mostViewed', 'App\Http\Controllers\VehicleController@mostViewedIndex');
 
 Route::get('/addNewCar', function () {
     return view('addNewCar');
