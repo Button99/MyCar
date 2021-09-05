@@ -84,4 +84,10 @@ class VehicleController extends Controller
 
         return redirect('/')->with('success');
     }
+
+    public function myCars() {
+        $vehicles= Vehicle::select('*')->where('vehicles.user_id', '=', Auth::user()->id)->get();
+
+        return view('myCars')->with('vehicles', $vehicles);
+    } 
 }

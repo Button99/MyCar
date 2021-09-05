@@ -11,7 +11,8 @@ main {
 }
 
 footer {
-  min-height: 80vh;
+  min-height: 85vh;
+  max-height: 180vh;
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 0;
@@ -83,6 +84,37 @@ footer {
 .card-options {
   max-height: 40vh;
   float: left;
+}
+
+.options-layout {
+  align-content: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.options-layout .settings-menu {
+  width: 15%;
+  border-right: 1px solid black;
+  float: left;
+  height: 90vh;
+}
+
+.options-layout .account-details {
+  text-align: center;
+  float: right;
+  width: 80%;
+}
+
+.options-layout img {
+  width: 20%;
+  height: 40vh;
+  align-content: center;
+}
+
+.options-layout table {
+  align-content: center;
+  margin-top: 1.5rem;
+  height: 30vh;
 }
 
 /*!

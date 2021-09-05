@@ -40,6 +40,11 @@
                         <li class="nav-item active">
                             <a class="btn" href="{{ url('/mostViewed') }}"> {{ __('Most Viewed')}} </a>
                         </li>
+                        @if(Auth::user())
+                            <li class="nav-item active">
+                                <a class="btn" href="{{ url('/myCars') }}"> {{ __('My Cars')}} </a>
+                            </li>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->
