@@ -27,6 +27,10 @@ Route::get('/carProfile/{id}/deleteCar', 'App\Http\Controllers\VehicleController
 
 Route::get('/mostViewed', 'App\Http\Controllers\VehicleController@mostViewedIndex');
 
+Route::get('/changePass', function () {
+    return view('changePass');
+});
+
 Route::get('/addNewCar', function () {
     return view('addNewCar');
 });
@@ -44,8 +48,8 @@ Route::get('/options', function() {
 Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
+Route::resource('userSettings', 'App\Http\Controllers\UserSettingsController');
 
-// Need to add route resource and show the id of the user
 
 Auth::routes();
 
