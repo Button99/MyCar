@@ -21,6 +21,10 @@ Route::get('/allCars', 'App\Http\Controllers\VehicleController@index');
 
 Route::get('/carProfile/{id}', 'App\Http\Controllers\VehicleController@show');
 
+Route::get('/carProfile/{id}/hideCar', 'App\Http\Controllers\VehicleController@hide');
+
+Route::get('/carProfile/{id}/deleteCar', 'App\Http\Controllers\VehicleController@destroy');
+
 Route::get('/mostViewed', 'App\Http\Controllers\VehicleController@mostViewedIndex');
 
 Route::get('/addNewCar', function () {

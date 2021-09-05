@@ -26,7 +26,10 @@
                                     Doors: {{$vehicle->doors}}<br>
                                     Seats: {{$vehicle->seats}}<br>
                                     Price: {{$vehicle->price}}<br>
-
+                                    @if(Auth::user()->id == $vehicle->user_id)
+                                        <a href="/carProfile/{{$vehicle-> id}}/hideCar" class="btn btn-warning">Hide</a>
+                                        <a href="/carProfile/{{$vehicle-> id}}/deleteCar" class="btn btn-danger">Delete</a>
+                                    @endif
                                 </p>
 
                             </div>

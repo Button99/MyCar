@@ -56,7 +56,6 @@ class VehicleController extends Controller
         }
     }
 
-    // Show all the Vehicles
     public function show($id) {
         $vehicle= Vehicle::find($id);
 
@@ -76,5 +75,13 @@ class VehicleController extends Controller
         $vehicles= Vehicle::join('data_logs', 'data_logs.id', '=', 'vehicles.dataLog_id')->orderBy('count', 'asc')->get();
         
         return view('mostViewed')->with('vehicles', $vehicles);
+    }
+
+    public function destroy($id) {
+        $vehicle= Vehicle::find($id);
+
+        $vehicle->delete();
+
+        return redirect('/')->with('success');
     }
 }
