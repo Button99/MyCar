@@ -1,0 +1,123 @@
+body {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 80vh;
+}
+
+footer {
+    min-height: 85vh;
+    max-height: 180vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+
+.layout {
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 45%;
+}
+
+.container .card {
+    width: 80%;
+}
+
+.layout ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.layout li {
+    display: inline-block;
+    padding: 0.5rem;
+    border-radius: 1px;
+    align-content: right;
+}
+
+.layout-addNewCar {
+    padding-left: 4rem;
+    margin-left: 4rem;
+}
+
+.layout-addNewCar .card {
+    align-content: center;
+    width: 80%;
+    margin-left: 4rem;
+}
+
+.layout-addNewCar .card-body {
+    align-content: center;
+    width: 100%;
+    margin-left: 4rem;
+    padding-left: 4rem;
+}
+
+#accordion .card {
+    width: 70%;
+    margin-left: 3rem;
+    padding-left: 3rem;
+
+}
+
+.container-profile {
+    margin-top: 2rem;
+}
+
+.container-profile .card {
+    width: 60%;
+}
+
+.card-options {
+    max-height: 40vh;
+    float:left;
+}
+
+.options-layout {
+    align-content: center;
+    width: 100%;
+    height: 90vh;
+}
+
+.options-layout .settings-menu {
+    width: 15%;
+    border-right: 1px solid black;
+    float: left;
+    height: 90vh;
+}
+
+.options-layout .account-details {
+    text-align: center;
+    float: right;
+    width: 80%;
+}
+
+.options-layout img {
+    width: 20%;
+    height: 40vh;
+    align-content: center;
+
+}
+
+.options-layout table {
+    align-content: center;
+    margin-top: 1.5rem;
+    height: 30vh;
+}
+
+.changePass-layout {
+    width: 100%;
+    text-align: center;
+}
