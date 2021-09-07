@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @if(session('success'))
+        {{session('success')}}
+    @else
+        {{session('error')}}
+    @endif
+
     <div class="changePass-layout">
         {!! Form::open(['action' => 'App\Http\Controllers\UserSettingsController@store', 'method' => 'POST']) !!}
             {{Form::label('Old Password:')}}
