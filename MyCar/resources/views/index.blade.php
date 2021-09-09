@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     @if(session('success'))
-        <p class="alert alert-success"> {{session('sucess')}} </p>
+        <p class="alert alert-success"> {{session('success')}} </p>
     @endif
     <h3>Welcome to MyCar!</h3>
     <br><br>

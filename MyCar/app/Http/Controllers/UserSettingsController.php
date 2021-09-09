@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -37,6 +38,9 @@ class UserSettingsController extends Controller
 
     public function accountDestroy() {
         $user= User::find(Auth::user()->id);
+
+        $vehicles= Vehicle::where('user_id', '=', $user->id);
+        $vehicles->delete();
 
         Auth::logout();
 
