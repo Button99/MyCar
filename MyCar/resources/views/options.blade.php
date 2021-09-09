@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     @if(Auth::user())
         <div class="options-layout">
@@ -8,7 +7,6 @@
                         <a class="card-text btn col-md-12 text-center" href="/changePass"> Change Password</a><br><hr>
                         <a class="card-text btn col-md-12 text-center" href="/lastLogin"> Last Login </a><br><hr>
                         <a class="card-text btn col-md-12 text-center" href="/deleteAccount"> Delete my account</a><br><br>
-        </section>
             </section>
             <section class="account-details">
                 <h1> Account Details</h1>

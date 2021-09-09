@@ -15,13 +15,13 @@ class UserSettingsController extends Controller
         
         if($req->input('newPass') != $req->input('newPass2')) {
             
-            return redirect('/changePass')->with('error', "Wrong Password1");
+            return redirect('/changePass')->with('error', "Wrong Password");
 
         }
 
         if(!Hash::check($req->oldPass, $user->password)){
             
-            return redirect('/changePass')->with('error', "Wrong Password2");
+            return redirect('/changePass')->with('error', "Wrong Password");
         }
 
         if(Hash::check($req->newPass, $user->password)) {
@@ -32,7 +32,21 @@ class UserSettingsController extends Controller
             return redirect('/changePass')->with('success', 'Password Changed Successfully');
         }
 
-        return redirect('/changePass')->with('error', "Wrong Password3");
+        return redirect('/changePass')->with('error', "Wrong Password");
+    }
+
+    public function accountDestroy() {
+        $user= User::find(Auth::user()->id);
+
+        Auth::logout();
+
+        if($user->delete()) {
+            return redirect('/')->with('success', 'Your account has been deleted');
+        }
+
+        else {
+            return redirect('/deleteAccount')->with('error', 'Sorry your Account cant be deleted');
+        }
     }
 
 }

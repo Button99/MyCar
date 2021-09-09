@@ -27,10 +27,6 @@ Route::get('/carProfile/{id}/deleteCar', 'App\Http\Controllers\VehicleController
 
 Route::get('/mostViewed', 'App\Http\Controllers\VehicleController@mostViewedIndex');
 
-Route::get('/changePass', function () {
-    return view('changePass');
-});
-
 Route::get('/addNewCar', function () {
     return view('addNewCar');
 });
@@ -44,6 +40,16 @@ Route::get('/myCars', 'App\Http\Controllers\VehicleController@myCars');
 Route::get('/options', function() {
     return view('options');
 });
+
+Route::get('/deleteAccount', function() {
+    return view('deleteMyAccount');
+});
+
+Route::get('/changePass', function () {
+    return view('changePass');
+});
+
+Route::delete('/deleteAccount/Success', 'App\Http\Controllers\UserSettingsController@accountDestroy');
 
 Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 

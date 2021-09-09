@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    @if(session('success'))
+        <p class="alert alert-success"> {{session('sucess')}} </p>
+    @endif
     <h3>Welcome to MyCar!</h3>
     <br><br>
     <p><b>My Car is a place where you can buy/rent and sell your car!</b></p>
