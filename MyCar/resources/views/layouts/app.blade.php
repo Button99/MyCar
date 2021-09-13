@@ -40,6 +40,9 @@
                         <li class="nav-item active">
                             <a class="btn" href="{{ url('/mostViewed') }}"> {{ __('Most Viewed')}} </a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="btn" href="{{ url('/search') }}"> {{ __('Search')}} </a>
+                        </li>
                         @if(Auth::user())
                             <li class="nav-item active">
                                 <a class="btn" href="{{ url('/myCars') }}"> {{ __('My Cars')}} </a>
