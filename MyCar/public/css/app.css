@@ -122,6 +122,11 @@ footer {
   text-align: center;
 }
 
+.search-layout {
+  width: 100%;
+  text-align: center;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

@@ -55,7 +55,7 @@ Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 
 Route::get('/search/show', 'App\Http\Controllers\SearchController@show');
 Route::get('/search', 'App\Http\Controllers\SearchController@index');
-
+Route::get('/search/results', 'App\Http\Controllers\SearchController@show');
 
 Route::resource('cars', 'App\Http\Controllers\VehicleController');
 Route::resource('userSettings', 'App\Http\Controllers\UserSettingsController');
