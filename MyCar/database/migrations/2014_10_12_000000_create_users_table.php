@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->float('rate')->default('1');
             $table->string('password');
             $table->rememberToken();
+            $table->timestamp('last_login')->nullable();
+            $table->string('last_ip')->nullable();
             $table->timestamps();
         });
     }

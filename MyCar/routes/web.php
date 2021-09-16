@@ -51,6 +51,8 @@ Route::get('/changePass', function () {
 
 Route::delete('/deleteAccount/Success', 'App\Http\Controllers\UserSettingsController@accountDestroy');
 
+Route::get('/lastLogin', 'App\Http\Controllers\UserSettingsController@lastLogin');
+
 Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 
 Route::get('/search/show', 'App\Http\Controllers\SearchController@show');

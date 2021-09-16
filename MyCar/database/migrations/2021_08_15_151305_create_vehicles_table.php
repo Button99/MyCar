@@ -33,6 +33,7 @@ class CreateVehiclesTable extends Migration
             $table->integer('seats');
 
             $table->double('price');
+            $table->boolean('hide')->default(0);
             $table->timestamps();
 
             $table->foreignId('user_id');

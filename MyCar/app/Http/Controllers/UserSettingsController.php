@@ -53,4 +53,9 @@ class UserSettingsController extends Controller
         }
     }
 
+    public function lastLogin() {
+        $user= User::find(Auth::user()->id);
+
+        return view('lastLogin')->with(['lastLogin'=> $user->last_login, 'lastIp' =>$user->last_ip]);
+    }
 }
