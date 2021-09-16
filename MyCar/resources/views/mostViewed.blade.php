@@ -1,7 +1,7 @@
 @extends('layouts.app')
     @section('content')
     <div class="layout">
-        <h1> My Cars </h1>
+        <h1> Most Viewed Cars </h1>
         @if($vehicles)
             <section class="second">    
                 <ul>

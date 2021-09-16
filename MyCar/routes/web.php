@@ -21,7 +21,9 @@ Route::get('/allCars', 'App\Http\Controllers\VehicleController@index');
 
 Route::get('/carProfile/{id}', 'App\Http\Controllers\VehicleController@show');
 
-Route::get('/carProfile/{id}/hideCar', 'App\Http\Controllers\VehicleController@hide');
+Route::get('/carProfile/{id}/hideCar', 'App\Http\Controllers\VehicleController@hideCar');
+
+Route::get('/carProfile/{id}/showCar', 'App\Http\Controllers\VehicleController@showCar');
 
 Route::get('/carProfile/{id}/deleteCar', 'App\Http\Controllers\VehicleController@destroy');
 
@@ -36,6 +38,8 @@ Route::get('/faq', function() {
 });
 
 Route::get('/myCars', 'App\Http\Controllers\VehicleController@myCars');
+
+
 
 Route::get('/options', function() {
     return view('options');

@@ -66,7 +66,7 @@ class VehicleController extends Controller
     }
 
     public function index() {
-        $vehicles= Vehicle::orderBy('created_at', 'desc')->get();
+        $vehicles= Vehicle::select('*')->where('hide', '=', '0')->orderBy('created_at', 'desc')->get();
 
         return view('allCars')->with('vehicles', $vehicles);
     }
@@ -90,4 +90,24 @@ class VehicleController extends Controller
 
         return view('myCars')->with('vehicles', $vehicles);
     } 
+
+    public function hideCar($id) {
+        $vehicle= Vehicle::find($id);
+
+        $vehicle->hide= 1;
+
+        $vehicle->save();
+
+        return redirect('/')->with('success', 'Your car has been in hide mode!');
+    }
+
+    public function showCar($id) {
+        $vehicle= Vehicle::find($id);
+
+        $vehicle->hide= 0;
+
+        $vehicle->save();
+
+        return redirect('/')->with('success', 'Other users can see your car!');
+    }
 }
