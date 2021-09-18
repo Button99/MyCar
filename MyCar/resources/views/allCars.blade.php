@@ -63,9 +63,9 @@
                             @if($vehicle->id == $pic->vehicle_id)
                                 <div class="card">
                                     <img
-                                        src=<?php echo storage_path() . "/app/public/photo_album/countSort2_1631972639.png" ?>
+                                        src="{{asset('storage/photo_album/'. $pic->path )}}"
                                         class="card-img-top"
-                                        alt=<?php echo storage_path() . "/app/public/photo_album/countSort2_1631972639.png"?>
+                                        alt="{{asset('storage/photo_album/'. $pic->path )}}"
                                     />
                             @endif
                         @endforeach

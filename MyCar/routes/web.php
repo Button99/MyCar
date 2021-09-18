@@ -39,8 +39,6 @@ Route::get('/faq', function() {
 
 Route::get('/myCars', 'App\Http\Controllers\VehicleController@myCars');
 
-
-
 Route::get('/options', function() {
     return view('options');
 });
