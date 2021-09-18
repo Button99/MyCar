@@ -59,12 +59,16 @@
                 <ul>
                     @foreach($vehicles as $vehicle)
                     <li>
-                        <div class="card">
-                            <img
-                                src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                                class="card-img-top"
-                                alt="..."
-                            />
+                        @foreach($picture as $pic)
+                            @if($vehicle->id == $pic->vehicle_id)
+                                <div class="card">
+                                    <img
+                                        src=<?php echo storage_path() . "/app/public/photo_album/countSort2_1631972639.png" ?>
+                                        class="card-img-top"
+                                        alt=<?php echo storage_path() . "/app/public/photo_album/countSort2_1631972639.png"?>
+                                    />
+                            @endif
+                        @endforeach
                             <div class="card-body">
                                 <h5 class="card-title">Model: {{$vehicle-> model}}</h5>
                                 <p class="card-text">

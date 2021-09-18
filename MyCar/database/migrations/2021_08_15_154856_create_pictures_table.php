@@ -15,16 +15,16 @@ class CreatePicturesTable extends Migration
     {
         Schema::create('pictures', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('path');
             $table->string('mime_type')->nullable();
-            $table->string('alt')->nullable();
-            $table->string('description')->nullable();
+            $table->boolean('car')->default(0);
+            
             $table->timestamps();
 
-            $table->bigInteger('user_id')->unsigned()->length(20);
+            $table->bigInteger('user_id')->unsigned()->length(20)->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->bigInteger('vehicle_id')->unsigned()->length(20);
+            $table->bigInteger('vehicle_id')->unsigned()->length(20)->nullable();
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
 
         });

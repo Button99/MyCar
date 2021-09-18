@@ -26,4 +26,5 @@ class Vehicle extends Model
     public function vehicle_accessories() {
         return $this->hasMany('App\Models\Accessory');
     }
+
 }

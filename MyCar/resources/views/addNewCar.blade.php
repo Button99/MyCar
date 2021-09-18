@@ -12,7 +12,7 @@
                             {{$error}}
                         @endforeach
                     @endif
-                    {!! Form::open(['action' => 'App\Http\Controllers\VehicleController@store', 'method' => 'POST']) !!}
+                    {!! Form::open(['action' => 'App\Http\Controllers\VehicleController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         {{Form::label('model:')}}
                         {{Form::text('model', '', ['placeholder' => 'Model'])}}
                         <br>
@@ -77,6 +77,9 @@
 
                         {{Form::label('price:')}}
                         {{Form::number('price', '', ['placeholder' => 'Price'])}}
+                        <br>
+                        <br>
+                        {{Form::file('cover_image')}}
                         <br>
                         <br>
                         {{Form::submit('submit')}}

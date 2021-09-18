@@ -28,5 +28,6 @@ class FormServiceProvider extends ServiceProvider
         Form::component('number', 'components.form.number', ['name', 'value' => null, 'attributes' => []]); // Doors, seats
         Form::component('year', 'components.form.year', ['name', 'value' => null, 'attributes' => []]); // For Kteo, Year
         Form::component('submit', 'components.form.submit', ['name', 'value'=> null,'attributes' => []]);
+        Form::component('file', 'components.form.file', ['name', 'attributes' => []]);
     }
 }
