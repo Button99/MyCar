@@ -55,14 +55,15 @@ class VehicleController extends Controller
             $vehicle->dataLog_id= $datalog->id;
 
             $vehicle->save();
-
-            $filenameWithExt= $request->file('cover_image')->getClientOriginalName();
-            $filename= pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            
+            //TODO:: Need to find better mechanism for pictures
+            $name= $request->file('cover_image')->getClientOriginalName();
+            $filename= pathinfo($name, PATHINFO_FILENAME);
             $extension= $request->file('cover_image')->getClientOriginalExtension();
-            $filenameToStore= $filename.'_'.time().'.'.$extension;
+            $filenameToStore= $filename.'_'.time().$extension;
             $path= $request->file('cover_image')->storeAs('public/photo_album', $filenameToStore);
             
-            $picture->path= $path;
+            $picture->path= 'storage/photo_album/'. $filenameToStore;
             $picture->mime_type= $extension;
             $picture->car= 0;
             $picture->user_id= Auth::user()->id;

@@ -30,7 +30,7 @@ class CreateAccessoriesTable extends Migration
             $table->boolean('Start/Stop');
             $table->timestamps();
 
-            $table->foreignId('vehicle_id');
+            $table->foreignId('vehicle_id')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

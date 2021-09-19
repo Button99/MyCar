@@ -36,9 +36,9 @@ class CreateVehiclesTable extends Migration
             $table->boolean('hide')->default(0);
             $table->timestamps();
 
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->onUpdate('cascade')->onDelete('cascade');
 
-            $table->foreignId('dataLog_id');
+            $table->foreignId('dataLog_id')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
