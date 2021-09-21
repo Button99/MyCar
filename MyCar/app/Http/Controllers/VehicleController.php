@@ -97,7 +97,9 @@ class VehicleController extends Controller
     public function mostViewedIndex() {
         $vehicles= Vehicle::join('data_logs', 'data_logs.id', '=', 'vehicles.dataLog_id')->where('hide', '=', '0')->orderBy('count', 'asc')->get();
         
-        return view('mostViewed')->with('vehicles', $vehicles);
+        $picture= Picture::select('*')->where('car', '=', '0')->get();
+
+        return view('mostViewed')->with(['vehicles' => $vehicles, 'picture' => $picture]);
     }
 
     public function destroy($id) {
@@ -111,7 +113,9 @@ class VehicleController extends Controller
     public function myCars() {
         $vehicles= Vehicle::select('*')->where('vehicles.user_id', '=', Auth::user()->id)->get();
 
-        return view('myCars')->with('vehicles', $vehicles);
+        $picture= Picture::select('*')->where('car', '=', '0')->get();
+
+        return view('myCars')->with(['vehicles'=> $vehicles, 'picture' => $picture]);
     } 
 
     public function hideCar($id) {

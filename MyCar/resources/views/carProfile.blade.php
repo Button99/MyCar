@@ -26,6 +26,7 @@
                                     Doors: {{$vehicle->doors}}<br>
                                     Seats: {{$vehicle->seats}}<br>
                                     Price: {{$vehicle->price}}<br>
+                                    
                                     @if(Auth::user()->id == $vehicle->user_id)
                                         @if($vehicle->hide == 1)
                                             <a href="/carProfile/{{$vehicle-> id}}/showCar" class="btn btn-warning">Show</a>

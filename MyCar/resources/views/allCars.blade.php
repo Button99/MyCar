@@ -63,9 +63,9 @@
                             @if($vehicle->id == $pic->vehicle_id)
                                 <div class="card">
                                     <img
-                                        src="{{asset('storage/photo_album/'. $pic->path )}}"
+                                        src="{{asset($pic->path )}}"
                                         class="card-img-top"
-                                        alt="{{asset('storage/photo_album/'. $pic->path )}}"
+                                        alt="{{asset($pic->path )}}"
                                     />
                             @endif
                         @endforeach

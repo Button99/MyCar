@@ -7,12 +7,16 @@
                 <ul>
                     @foreach($vehicles as $vehicle)
                         <li>
-                            <div class="card">
-                                <img
-                                    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
-                                    class="card-img-top"
-                                    alt="..."
-                                />
+                            @foreach($picture as $pic)
+                                @if($vehicle->id == $pic->id)
+                                    <div class="card">
+                                        <img
+                                            src="{{asset($pic->path)}}"
+                                            class="card-img-top"
+                                            alt="{{asset($pic->path)}}"
+                                        />
+                                @endif
+                            @endforeach
                                 <div class="card-body">
                                     <h5 class="card-title">Model: {{$vehicle-> model}}</h5>
                                     <p class="card-text">
