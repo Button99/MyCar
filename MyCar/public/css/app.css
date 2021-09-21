@@ -77,6 +77,27 @@ footer {
   margin-top: 2rem;
 }
 
+.container-profile img {
+  opacity: 1;
+  transition: 0.2s ease;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.container-profile:hover img {
+  opacity: 0.3;
+}
+
+.container-profile .message {
+  transition: 0.2 ease;
+  opacity: 0;
+  text-align: center;
+}
+
+.container-profile:hover .message {
+  opacity: 1;
+}
+
 .container-profile .card {
   width: 60%;
 }

@@ -10,7 +10,6 @@
             </section>
             <section class="account-details">
                 <h1> Account Details</h1>
-
                 <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="rounded-circle" alt="..." />
                 <br>
                 <table class="table">

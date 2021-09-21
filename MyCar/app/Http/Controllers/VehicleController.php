@@ -56,7 +56,6 @@ class VehicleController extends Controller
 
             $vehicle->save();
             
-            //TODO:: Need to find better mechanism for pictures
             $name= $request->file('cover_image')->getClientOriginalName();
             $filename= pathinfo($name, PATHINFO_FILENAME);
             $extension= $request->file('cover_image')->getClientOriginalExtension();
@@ -78,13 +77,13 @@ class VehicleController extends Controller
         $vehicle= Vehicle::find($id);
 
         $picture= Picture::select('*')->where('vehicle_id', '=', $vehicle->id)
-            ->where('car', '=', '0');
+            ->where('car', '=', '0')->first();
         
         $data= DataLog::find($vehicle->dataLog_id);
         $data->count+=1;
         $data->save();
 
-        return view('/carProfile')->with(['vehicle'=> $vehicle], ['picture'=> $picture]);
+        return view('/carProfile')->with(['vehicle'=> $vehicle, 'picture'=> $picture]);
     }
 
     public function index() {

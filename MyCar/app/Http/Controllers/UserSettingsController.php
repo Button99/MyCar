@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Vehicle;
+use App\Models\Picture;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -57,5 +58,30 @@ class UserSettingsController extends Controller
         $user= User::find(Auth::user()->id);
 
         return view('lastLogin')->with(['lastLogin'=> $user->last_login, 'lastIp' =>$user->last_ip]);
+    }
+
+    // Find bef4 picture and delete it
+    public function changePicture(Request $request) {
+        $user= User::find(Auth::user()->id);
+        $picture= new Picture;
+        
+        // Delete old pic
+        $pictureForDelete= Picture::select('*')->where('user_id', '=', Auth::user()->id)->where('car', '=', '1')->delete();
+
+        $name= $request->file('cover_image')->getClientOriginalName();
+        $filename= pathinfo($name, PATHINFO_FILENAME);
+        $extension= $request->file('cover_image')->getClientOriginalExtension();
+        $filenameToStore= $filename.'_'.time().$extension;
+        $path= $request->file('cover_image')->storeAs('public/photo_album', $filenameToStore);
+        
+        // store new pic
+        $picture->path= 'storage/photo_album/'. $filenameToStore;
+        $picture->mime_type= $extension;
+        $picture->car= 1;
+        $picture->user_id= Auth::user()->id;
+
+        $picture->save();
+
+        return redirect('profile/{{ $user->id }}')->with('success', 'Picture Update!');
     }
 }

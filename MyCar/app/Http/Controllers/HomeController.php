@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Picture;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,7 @@ class HomeController extends Controller
 
     public function show($id) {
         $user= User::find($id);
-        return view('profile')->with('user', $user);
+        $picture= Picture::select('*')->where('user_id', '=', $user->id)->where('car', '=', '1')->first();
+        return view('profile')->with(['user'=> $user, 'picture'=> $picture]);
     }
 }

@@ -35,6 +35,8 @@ footer {
     width: 80%;
 }
 
+
+
 .layout ul {
     display: flex;
     list-style-type: none;
@@ -74,6 +76,26 @@ footer {
 
 .container-profile {
     margin-top: 2rem;
+}
+
+.container-profile img {
+    opacity: 1;
+    transition: .2s ease;
+    backface-visibility: hidden;
+}
+
+.container-profile:hover img {
+    opacity: 0.3;
+}
+
+.container-profile .message {
+    transition: .2 ease;
+    opacity: 0;
+    text-align: center;
+}
+
+.container-profile:hover .message {
+    opacity: 1;
 }
 
 .container-profile .card {

@@ -57,6 +57,8 @@ Route::get('/lastLogin', 'App\Http\Controllers\UserSettingsController@lastLogin'
 
 Route::get('/profile/{id}', 'App\Http\Controllers\HomeController@show');
 
+Route::post('/changePicture', 'App\Http\Controllers\UserSettingsController@changePicture');
+
 Route::get('/search/show', 'App\Http\Controllers\SearchController@show');
 Route::get('/search', 'App\Http\Controllers\SearchController@index');
 Route::get('/search/results', 'App\Http\Controllers\SearchController@show');

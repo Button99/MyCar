@@ -5,9 +5,10 @@
         <h1> Profile </h1>
         <div class="container-profile">
                 <div class="card">
+                    
                     <div class="row no-gutters">
                         <div class="col-sm-5">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img" alt="...">
+                            <img src="{{asset($picture->path)}}" class="card-img" alt="...">
                         </div>
                         <div class="col-sm-7">
                             <div class="card-body">
@@ -26,7 +27,7 @@
                                     Doors: {{$vehicle->doors}}<br>
                                     Seats: {{$vehicle->seats}}<br>
                                     Price: {{$vehicle->price}}<br>
-                                    
+
                                     @if(Auth::user()->id == $vehicle->user_id)
                                         @if($vehicle->hide == 1)
                                             <a href="/carProfile/{{$vehicle-> id}}/showCar" class="btn btn-warning">Show</a>
