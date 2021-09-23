@@ -34,6 +34,7 @@
                                         @else
                                             <a href="/carProfile/{{$vehicle-> id}}/hideCar" class="btn btn-warning">Hide</a>
                                         @endif
+                                        <a href="/carProfile/{{$vehicle->id }}/editCar" class="btn btn-secondary"> Edit Car Details </a>
                                         <a href="/carProfile/{{$vehicle-> id}}/deleteCar" class="btn btn-danger">Delete</a>
                                     @endif
                                 </p>

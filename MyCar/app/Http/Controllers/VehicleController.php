@@ -127,6 +127,22 @@ class VehicleController extends Controller
         return redirect('/')->with('success', 'Your car has been in hide mode!');
     }
 
+    public function edit($id) {
+        $vehicle= Vehicle::find($id);
+
+        return view('addNewCar')->with('vehicle', $vehicle);
+    }
+
+    public function update(Request $req, $id) {
+        $vehicle= Vehicle::findorFail($id);
+        
+        
+        $vehicle->update($req->only(['model', 'mileage', 'color', 'condition', 'category', 'fuel_type', 'type', 'kteo', 'year', 'engine', 'doors', 'seats', 'price', 'updated_at']));
+        $vehicle->save();
+
+        return redirect('addNewCar')->with('success', 'Update Completed!');
+    }
+
     public function showCar($id) {
         $vehicle= Vehicle::find($id);
 

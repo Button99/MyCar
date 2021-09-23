@@ -23,6 +23,10 @@ Route::get('/carProfile/{id}', 'App\Http\Controllers\VehicleController@show');
 
 Route::get('/carProfile/{id}/hideCar', 'App\Http\Controllers\VehicleController@hideCar');
 
+Route::get('/carProfile/{id}/editCar', 'App\Http\Controllers\VehicleController@edit');
+
+Route::put('/carProfile/{id}/updateCar', 'App\Http\Controllers\VehicleController@update');
+
 Route::get('/carProfile/{id}/showCar', 'App\Http\Controllers\VehicleController@showCar');
 
 Route::get('/carProfile/{id}/deleteCar', 'App\Http\Controllers\VehicleController@destroy');
