@@ -28,14 +28,16 @@
                                     Seats: {{$vehicle->seats}}<br>
                                     Price: {{$vehicle->price}}<br>
 
-                                    @if(Auth::user()->id == $vehicle->user_id)
-                                        @if($vehicle->hide == 1)
-                                            <a href="/carProfile/{{$vehicle-> id}}/showCar" class="btn btn-warning">Show</a>
-                                        @else
-                                            <a href="/carProfile/{{$vehicle-> id}}/hideCar" class="btn btn-warning">Hide</a>
+                                    @if(!empty(Auth::user()->id))
+                                        @if(Auth::user()->id == $vehicle->user_id)
+                                            @if($vehicle->hide == 1)
+                                                <a href="/carProfile/{{$vehicle-> id}}/showCar" class="btn btn-warning">Show</a>
+                                            @else
+                                                <a href="/carProfile/{{$vehicle-> id}}/hideCar" class="btn btn-warning">Hide</a>
+                                            @endif
+                                            <a href="/carProfile/{{$vehicle->id }}/editCar" class="btn btn-secondary"> Edit Car Details </a>
+                                            <a href="/carProfile/{{$vehicle-> id}}/deleteCar" class="btn btn-danger">Delete</a>
                                         @endif
-                                        <a href="/carProfile/{{$vehicle->id }}/editCar" class="btn btn-secondary"> Edit Car Details </a>
-                                        <a href="/carProfile/{{$vehicle-> id}}/deleteCar" class="btn btn-danger">Delete</a>
                                     @endif
                                 </p>
 
