@@ -1849,10 +1849,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  data: function data() {},
+  data: function data() {
+    return {
+      edit: false,
+      list: [],
+      vehicle: {
+        id: '',
+        name: '',
+        type: ''
+      }
+    };
+  },
   mounted: function mounted() {
     console.log('Vehicles comp loaded');
+  },
+  methods: {
+    store: function store() {},
+    updateVehicle: function updateVehicle(id) {}
   }
 });
 
@@ -37389,7 +37416,85 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v(" Vehicles ")])
+  return _c("div", [
+    _c("h1", [_vm._v(" Vehicles ")]),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        attrs: { action: "#" },
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            _vm.edit ? _vm.updateVehicle(_vm.vehicle.id) : _vm.store()
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "form-group" }, [
+          _c("label", [_vm._v(" Name ")]),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.vehicle.name,
+                expression: "vehicle.name"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { type: "text", name: "name" },
+            domProps: { value: _vm.vehicle.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.vehicle, "name", $event.target.value)
+              }
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { attrs: { classs: "form-group" } }, [
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.edit,
+                  expression: "!edit"
+                }
+              ],
+              staticClass: "btn btn-primary",
+              attrs: { type: "submit" }
+            },
+            [_vm._v("New Vehicle")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.edit,
+                  expression: "edit"
+                }
+              ],
+              staticClass: "btn btn-primary",
+              attrs: { type: "submit" }
+            },
+            [_vm._v(" Update vehicle ")]
+          )
+        ])
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
