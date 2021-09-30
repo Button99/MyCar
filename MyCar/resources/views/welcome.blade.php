@@ -3,7 +3,7 @@
     <head> 
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{csrf_token()}}">
-        <title> Vehicle </title>
+        <title> MyCar </title>
         <link rel="stylesheet" href="/css/app.css">
     </head>
 

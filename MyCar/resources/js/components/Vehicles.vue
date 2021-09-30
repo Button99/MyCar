@@ -1,22 +1,33 @@
 <template>
     <div>
-        <h1> Vehicles </h1>
-        <form action="#" @submit.prevent="edit ? updateVehicle(vehicle.id) : store()">
-            <div class="form-group">
-                <label> Name </label>
-                <input v-model="vehicle.name" type="text" name="name" class="form-control" />
-            </div>
+        <title>AAAAA</title>
+        <app-header></app-header>
+        <h1> MyCar </h1>
 
-            <div classs="form-group">
-                <button v-show="!edit" type="submit" class="btn btn-primary">New Vehicle</button>
-                <button v-show="edit" type="submit" class="btn btn-primary"> Update vehicle </button>
-            </div>
-        </form>
+        <p>Welcome to MyCar! <br>
+        <p><b>My Car is a place where you can buy/rent and sell your car!</b></p>
+        <p><b>Here you can find any car you want!</b></p>
+        <p>If you want to add your car then you should <b>register</b> first and then you are free to go!</p></p>
+    
+        <app-footer></app-footer>
     </div>
 </template>
 
 <script>
+
+    import Navbar from './layouts/Navbar.vue';
+    import Footer from './layouts/Footer.vue';
+
     export default {
+        title: {
+            'title': 'MyCar || Home'
+        },
+
+        components: {
+            'app-header': Navbar,
+            'app-footer': Footer
+        },
+
         data: function() {
             return {
                 edit: false,
